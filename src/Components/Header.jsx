@@ -7,7 +7,7 @@ function Header() {
       <header className="flex justify-between items-center md:px-0 px-[20px] max-w-[1280px] m-auto py-[20px]">
         <Link to={"/"}>
           <span className="header-logo text-[#282828] font-bold text-[22px]">
-            Fonusiya shop
+            Inamjanov shop
           </span>
         </Link>
         <ul>
