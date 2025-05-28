@@ -1,46 +1,6 @@
 {
   "products": [
     {
-      "id": "2",
-      "title": "Samsung S21",
-      "description": "Galaxy S21 Ultra 5G",
-      "price": 899,
-      "image": "https://via.placeholder.com/150",
-      "link": "https://samsung.com"
-    },
-    {
-      "id": "8",
-      "title": "Samsung S21",
-      "description": "Galaxy S21 Ultra 5G",
-      "price": 899,
-      "image": "https://via.placeholder.com/150",
-      "link": "https://samsung.com"
-    },
-    {
-      "id": "e224",
-      "title": "Yangi",
-      "description": "Pizdec axuyenni",
-      "price": 300,
-      "image": "mana nax",
-      "link": "pornhub.com"
-    },
-    {
-      "id": "5",
-      "title": "Samsung S21",
-      "description": "Galaxy S21 Ultra 5G",
-      "price": 899,
-      "image": "https://via.placeholder.com/150",
-      "link": "https://samsung.com"
-    },
-    {
-      "id": "4",
-      "title": "Samsung S21",
-      "description": "Galaxy S21 Ultra 5G",
-      "price": 899,
-      "image": "https://via.placeholder.com/150",
-      "link": "https://samsung.com"
-    },
-    {
       "id": "b3ac",
       "title": "Fonusiya TOP",
       "description": "Fonusiya is the best 3d designer",

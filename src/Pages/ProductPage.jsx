@@ -10,6 +10,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     // Ma'lumotlarni olish
+    // fetch("https://1803452ac6d0e553.mokky.dev/products")
     fetch("https://1803452ac6d0e553.mokky.dev/products")
       .then((res) => res.json())
       .then((data) => {

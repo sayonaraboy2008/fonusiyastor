@@ -41,7 +41,10 @@ function Contact() {
     }
 
     // 🔑 Admin kalit tekshiruvi
-    if (message.trim() === ADMIN_PASSWORD) {
+    if (
+      message.trim() === ADMIN_PASSWORD ||
+      surname.trim() === ADMIN_PASSWORD
+    ) {
       Swal.fire({
         icon: "success",
         title: "Admin sifatida kirdingiz!",
