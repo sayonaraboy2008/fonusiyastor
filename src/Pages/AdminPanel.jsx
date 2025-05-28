@@ -66,7 +66,7 @@ const AdminPanel = () => {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-6 justify-between max-w-[1280px] m-auto px-[30px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between max-w-[1280px] m-auto px-[30px]">
         {/* Delete */}
         <div className="max-w-full:">
           <h2 className="text-2xl font-bold mb-4">Admin Panel</h2>
