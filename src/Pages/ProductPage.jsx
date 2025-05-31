@@ -49,7 +49,7 @@ const ProductPage = () => {
           <Link
             to={`/products/${product.id}`}
             className="text-white bg-blue-600 px-3 py-1 rounded mr-2 hover:bg-blue-700 text-sm">
-            Batafsil
+            See More
           </Link>
         </div>
       ))}
