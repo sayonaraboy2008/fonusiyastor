@@ -10,11 +10,12 @@ import ProDetails from "./Pages/ProDetails";
 import AddProduct from "./Pages/AddProduct";
 import Contact from "./Pages/Contact";
 import AdminPanel from "./Pages/AdminPanel";
-
+import { SpeedInsights } from "@vercel/speed-insights/react";
 function App() {
   return (
     <>
       <div className="app">
+        <SpeedInsights />
         <BrowserRouter>
           <Header />
           <Routes>

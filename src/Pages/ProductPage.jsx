@@ -18,7 +18,7 @@ const ProductPage = () => {
         setTimeout(() => {
           setProducts(data);
           setLoading(false);
-        }, 1200);
+        }, 1000);
       })
       .catch((error) => {
         console.error("Xatolik yuz berdi:", error);

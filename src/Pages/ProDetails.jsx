@@ -32,8 +32,8 @@ const ProDetails = () => {
   if (!product) return <p>Mahsulot topilmadi</p>;
 
   return (
-    <div className="max-w-[1050px] m-auto justify-center px-[20px] items-center flex flex-wrap">
-      <div className="left max-w-[430px] w-full">
+    <div className="max-w-[1250px] m-auto justify-center px-[20px] items-center flex flex-wrap">
+      <div className="left max-w-[400px] w-full">
         <img
           src={product.image}
           alt={product.title}
@@ -58,7 +58,7 @@ const ProDetails = () => {
         <br />
         <br />
         <Link to="/" className="text-blue-500 underline">
-          ← Ortga qaytish
+          ← Back to Home
         </Link>
       </div>
     </div>

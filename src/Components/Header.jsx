@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FaTelegram } from "react-icons/fa";
 function Header() {
   return (
     <>
@@ -14,6 +14,10 @@ function Header() {
           {/* <li>
             <a href="">Portfolio</a>
           </li> */}
+          <Link to={"https://t.me/Inamjanov_3D"}>
+            <span>Contact vis Telegram</span>
+            <FaTelegram />
+          </Link>
           <Link to={"/contact"} className=" text-[#fff]">
             <li className="bg-black px-[12px] text-[14px] py-[8px] rounded-[10px]">
               Contact
