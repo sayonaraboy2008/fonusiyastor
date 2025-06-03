@@ -4,7 +4,9 @@ import ProductPage from "./ProductPage";
 function Main() {
   return (
     <>
-      <ProductPage />
+      <div className="main pt-[70px]">
+        <ProductPage />
+      </div>
     </>
   );
 }
