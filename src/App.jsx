@@ -3,8 +3,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import Main from "./Pages/Main";
-import Color from "./Color";
-import Colorshow from "./Colorshow";
 import ProductPage from "./Pages/ProductPage";
 import ProDetails from "./Pages/ProDetails";
 import AddProduct from "./Pages/AddProduct";

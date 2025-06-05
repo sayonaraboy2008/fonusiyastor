@@ -97,7 +97,7 @@ function Contact() {
     } p-3 rounded-md w-full outline-none`;
 
   return (
-    <div className="px-4 py-8 md:px-10 lg:px-20 contactpage">
+    <div className="px-4 pb-8 pt-[70px] md:px-10 lg:px-20 contactpage">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl text-center mb-6 text-black font-semibold">
           Contact Me

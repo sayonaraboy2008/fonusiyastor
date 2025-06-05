@@ -32,12 +32,12 @@ const ProDetails = () => {
   if (!product) return <p>Mahsulot topilmadi</p>;
 
   return (
-    <div className="max-w-[1250px] m-auto justify-center px-[20px] items-center flex flex-wrap">
-      <div className="left max-w-[400px] w-full">
+    <div className="max-w-[980px] m-auto px-[30px] md:justify-start md:gap-[40px] pb-20px] md:items-center pt-[70px]  flex md:flex-wrap md:flex-row flex-col">
+      <div className="left max-w-full">
         <img
           src={product.image}
           alt={product.title}
-          className="w-full h-64 object-contain "
+          className="w-full h-64 md:max-h-64 object-contain "
         />
       </div>
       <div className="right">

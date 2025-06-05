@@ -8,6 +8,8 @@ const AdminPanel = () => {
     description: "",
     price: "",
     image: "",
+    image2: "",
+    image3: "",
     link: "",
   });
 
@@ -66,7 +68,7 @@ const AdminPanel = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between max-w-[1280px] m-auto px-[30px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between max-w-[1280px] m-auto pt-[70px] pb-[30px]">
         {/* Delete */}
         <div className="max-w-full:">
           <h2 className="text-2xl font-bold mb-4">Admin Panel</h2>
@@ -121,6 +123,24 @@ const AdminPanel = () => {
               name="image"
               placeholder="Rasm URL"
               value={formData.image}
+              onChange={handleChange}
+              className="w-full border rounded p-2"
+              required
+            />
+            <input
+              type="text"
+              name="image2"
+              placeholder="Rasm URL 2"
+              value={formData.image2}
+              onChange={handleChange}
+              className="w-full border rounded p-2"
+              required
+            />
+            <input
+              type="text"
+              name="image3"
+              placeholder="Rasm URL 3"
+              value={formData.image3}
               onChange={handleChange}
               className="w-full border rounded p-2"
               required
