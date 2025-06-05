@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import LoadingSpinner from "../Components/LoadingSpinner";
+import ProductSkeleton from "../Components/ProductSkeleton"; // skelet import
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -15,7 +15,6 @@ const ProductPage = () => {
         setTimeout(() => {
           setProducts(data);
           setLoading(false);
-          AOS.refresh(); // Ma'lumot kelib tushgandan so'ng AOSni yangilaymiz
         }, 1000);
       })
       .catch((error) => {
@@ -26,12 +25,26 @@ const ProductPage = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 3000, // Animatsiya davomiyligi (ms)
-      once: true, // Faqat bir marta bajariladi
+      duration: 800,
+      once: false,
+      mirror: true,
+      easing: "ease-in-out",
+      offset: 50,
     });
   }, []);
 
-  if (loading) return <LoadingSpinner />;
+  if (loading) {
+    // Loading paytida 8 dona skeletonga o‘xshash kartani ko‘rsatamiz
+    return (
+      <div className="grid grid-cols-1 max-w-[1280px] min-[520px]:grid-cols-2 m-auto md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        {Array(8)
+          .fill(0)
+          .map((_, i) => (
+            <ProductSkeleton key={i} />
+          ))}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 max-w-[1280px] min-[520px]:grid-cols-2 m-auto md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
@@ -40,8 +53,7 @@ const ProductPage = () => {
           key={product.id}
           className="border rounded-xl shadow p-4 hover:shadow-lg transition"
           data-aos="fade-up"
-          data-aos-delay={index * 150} // Har kartaga 150ms kechikish beriladi
-        >
+          data-aos-delay={Math.min(index * 150, 600)}>
           <img
             src={product.image}
             alt={product.title}
