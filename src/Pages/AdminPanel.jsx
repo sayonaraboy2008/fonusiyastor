@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { CiEdit } from "react-icons/ci";
 const AdminPanel = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -78,11 +79,19 @@ const AdminPanel = () => {
                 key={product.id}
                 className="flex justify-between items-center border-b pb-2">
                 <span>{product.title}</span>
-                <button
-                  onClick={() => deleteProduct(product.id)}
-                  className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">
-                  O‘chirish
-                </button>
+                <div className="flex gap-[20px]">
+                  <button
+                    onClick={() => deleteProduct(product.id)}
+                    className="bg-red-600 text-white px-3 flex items-center gap-[3px] py-1 rounded hover:bg-red-700">
+                    O‘chirish
+                    <RiDeleteBin5Line />
+                  </button>
+                  <button
+                    onClick={() => navigate(`/edit/${product.id}`)}
+                    className="bg-blue-600 text-white flex items-center gap-[3px] px-3 py-1 rounded hover:bg-blue-700">
+                    Tahrirlash <CiEdit />
+                  </button>
+                </div>
               </li>
             ))}
           </ul>

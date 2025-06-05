@@ -26,7 +26,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animatsiya davomiyligi (ms)
+      duration: 3000, // Animatsiya davomiyligi (ms)
       once: true, // Faqat bir marta bajariladi
     });
   }, []);

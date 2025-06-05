@@ -9,6 +9,7 @@ import AddProduct from "./Pages/AddProduct";
 import Contact from "./Pages/Contact";
 import AdminPanel from "./Pages/AdminPanel";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Edit from "./Pages/Edit";
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/add" element={<AddProduct />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/qqwweerrttyy" element={<AdminPanel />} />
+            <Route path="/edit/:id" element={<Edit />} />
           </Routes>
           {/* <Color /> */}
           {/* <Colorshow /> */}

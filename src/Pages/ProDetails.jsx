@@ -57,9 +57,12 @@ const ProDetails = () => {
             cssMode={true}
             navigation={true}
             pagination={true}
-            autoplay={true}
             mousewheel={true}
             keyboard={true}
+            autoplay={{
+              delay: 3000, // ⏱ 3 soniya (3000ms)
+              disableOnInteraction: false, // foydalanuvchi o‘zgartirganda autoplay to‘xtamasin
+            }}
             modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
             className="mySwiper">
             <SwiperSlide>
