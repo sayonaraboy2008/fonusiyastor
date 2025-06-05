@@ -1,9 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import LoadingSpinner from "../Components/LoadingSpinner";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import "./styles.css";
+
+// import required modules
+import {
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+  Autoplay,
+} from "swiper/modules";
 
 const ProDetails = () => {
-  const { id } = useParams(); // ← URL dan id olinyapti
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -16,11 +33,10 @@ const ProDetails = () => {
         return res.json();
       })
       .then((data) => {
-        // ⏱ 2 soniyadan keyin yuklashni tugatish
         setTimeout(() => {
           setProduct(data);
           setLoading(false);
-        }, 400); // 2000ms = 2 sekund
+        }, 400);
       })
       .catch((error) => {
         console.error("Xatolik:", error);
@@ -29,38 +45,73 @@ const ProDetails = () => {
   }, [id]);
 
   if (loading) return <LoadingSpinner />;
-  if (!product) return <p>Mahsulot topilmadi</p>;
+  if (!product)
+    return <p className="text-center mt-10 text-red-600">Mahsulot topilmadi</p>;
 
   return (
-    <div className="max-w-[980px] m-auto px-[30px] md:justify-start md:gap-[40px] pb-20px] md:items-center pt-[70px]  flex md:flex-wrap md:flex-row flex-col">
-      <div className="left max-w-full">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-full h-64 md:max-h-64 object-contain "
-        />
-      </div>
-      <div className="right">
-        <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
-        <p className="text-gray-700 mb-2">{product.description}</p>
-        <p className="text-green-600 font-semibold text-xl mb-4">
-          ${product.price}
-        </p>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 pt-[100px]">
+      <div className="flex flex-col md:flex-row gap-8 items-center">
+        {/* Chap (Rasm) */}
+        <div className="w-full md:w-1/2">
+          <Swiper
+            cssMode={true}
+            navigation={true}
+            pagination={true}
+            autoplay={true}
+            mousewheel={true}
+            keyboard={true}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+            className="mySwiper">
+            <SwiperSlide>
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-64 md:h-80 object-contain rounded shadow"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src={product.image2}
+                alt={product.title}
+                className="w-full h-64 md:h-80 object-contain rounded shadow"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src={product.image3}
+                alt={product.title}
+                className="w-full h-64 md:h-80 object-contain rounded shadow"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
 
-        <a
-          href={product.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-          Buy Now
-        </a>
+        {/* O'ng (Ma'lumot) */}
+        <div className="w-full md:w-1/2 space-y-4">
+          <h1 className="text-3xl font-bold">{product.title}</h1>
+          <p className="text-gray-700">{product.description}</p>
+          <p className="text-green-600 font-semibold text-2xl">
+            ${product.price}
+          </p>
 
-        <br />
-        <br />
-        <Link to="/" className="text-blue-500 underline">
-          ← Back to Home
-        </Link>
+          <a
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-200">
+            Buy Now
+          </a>
+
+          <div>
+            <Link to="/" className="text-blue-500 hover:underline text-sm">
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
       </div>
+      {/*  */}
     </div>
   );
 };
